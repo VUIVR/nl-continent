@@ -1,8 +1,8 @@
-export class CreateItemCategory {
+export class CreateItemListCategory {
   /**название категории */
   name;
   /* цвет текста категории */
-  text__color;
+  textColor;
   /** изображение  */
   image;
   /** уникальный тег */
@@ -10,7 +10,7 @@ export class CreateItemCategory {
 
   constructor(data) {
     this.name = data.name;
-    this.text__color = data.text__color;
+    this.textColor = data.text_color;
     this.image = data.image;
     this.slug = data.slug;
   }

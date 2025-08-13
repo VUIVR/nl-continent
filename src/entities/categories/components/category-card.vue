@@ -1,5 +1,5 @@
 <template>
-  <article class="category-card" :style="{ 'background-color': text__color }">
+  <article class="category-card" :style="{ 'background-color': textColor }">
     <router-link
       :to="{ name: 'category', params: { category: slug } }"
       :aria-label="`Перейти к товарам категории ${name}`"
@@ -10,14 +10,14 @@
   </article>
 </template>
 <script setup>
-const props = defineProps({
+defineProps({
   /**название категории */
   name: {
     type: String,
     required: true,
   },
   /* цвет текста категории */
-  text__color: {
+  textColor: {
     type: String,
     required: true,
   },

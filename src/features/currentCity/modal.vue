@@ -17,10 +17,10 @@
 </template>
 <script setup>
 import { ref } from 'vue';
-import { useCitiesStore } from '@/entities/cities/model/store';
+// import { useCitiesStore } from '@/entities/cities/model/store';
 import { CityModel as Model } from '@/entities/cities/model/model';
 
-const citiesStore = useCitiesStore();
+// const citiesStore = useCitiesStore();
 const model = new Model();
 const search = ref('');
 

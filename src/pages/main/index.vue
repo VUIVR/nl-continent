@@ -2,22 +2,31 @@
   <section class="categories layout-content">
     <h3 class="categories__title">Категории товаров</h3>
     <div class="categories__list" v-if="!model.loading.value">
-      <Card v-for="item in model.list.value" :key="item.slug" v-bind="item" />
+      <CategoryCard v-for="item in model.list.value" :key="item.slug" v-bind="item" />
     </div>
     <Spiner v-else class="categories__spiner" />
   </section>
 </template>
 <script setup>
-import { onMounted } from 'vue';
-import { CategoryModel } from '@/entities/categories/model/model';
+import { watch } from 'vue';
+import { useCitiesStore } from '@/entities/cities/model/store';
+import { CategoryModel } from '@/entities/categories/model/model-list';
 import Spiner from '@/shared/ui/nl-spiner/index.vue';
-import Card from '@/entities/categories/components/card.vue';
+import CategoryCard from '@/entities/categories/components/category-card.vue';
 
 const model = new CategoryModel();
+const citiesStore = useCitiesStore();
 
-onMounted(async () => {
-  await model.getList();
-});
+watch(
+  () => citiesStore.currentCity,
+  (newValue) => {
+    if (!newValue) return;
+    model.getList(newValue.id);
+  },
+  {
+    immediate: true,
+  },
+);
 </script>
 
 <style scoped>

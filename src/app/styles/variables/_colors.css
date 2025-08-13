@@ -4,4 +4,9 @@
   --shadow-white: rgba(39, 39, 39, 0.1);
   --main-grey: #979797;
   --border-grey: #97979780;
+  --main-black: #;
+
+  --button-gradient-light: #ffa800;
+  --button-gradient-dark: #ff6f00;
+  --button-shadow: #ffa80080;
 }

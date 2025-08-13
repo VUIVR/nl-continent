@@ -2,10 +2,6 @@ import { BaseApi } from '@/shared/axios/index';
 
 const folder = 'menutags';
 
-export async function getList(id) {
-  return await new BaseApi(folder, 'ru').get({ city_id: id });
-}
-
-export async function getOne(id, slug) {
+export async function getList(id, slug) {
   return await new BaseApi(`${folder}/${slug}`, 'ru').get({ city_id: id });
 }

@@ -9,7 +9,7 @@
   border-radius: 50%;
   width: 48px;
   height: 48px;
-  color: green;
+  color: var(--button-gradient-dark);
   margin: 0 auto;
 }
 .loader:before,
@@ -26,7 +26,7 @@
   animation: 1s spin linear infinite;
 }
 .loader:after {
-  color: #ff3d00;
+  color: var(--button-gradient-light);
   transform: rotateY(70deg);
   animation-delay: 0.4s;
 }

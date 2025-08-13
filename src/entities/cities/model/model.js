@@ -11,7 +11,7 @@ export class CityModel {
 
   /**
    * Получение списка городов
-   * @param {string} search - строка для посика по названию города
+   * @param {string} search - строка для поиска по названию города
    * @returns {Promise<CreateItem[]>} - список городов
    */
   async getList(search) {
@@ -19,8 +19,8 @@ export class CityModel {
     try {
       const resp = await getCity({ term: search });
       this.list.value = resp.data.data.map((i) => new CreateItemCiry(i));
-    } catch (err) {
-      // обраьотка ошибки или показывваем тост с ошибкой
+    } catch {
+      // обработка ошибки или показывваем тост с ошибкой
     } finally {
       this.loading.list = false;
     }
@@ -37,7 +37,7 @@ export class CityModel {
     try {
       const resp = await getCity({ id });
       return new CreateItemCiry(resp.data.data);
-    } catch (err) {
+    } catch {
       // обра,отка ошибки или показывваем тост с ошибкой
     } finally {
       this.loading.one = false;

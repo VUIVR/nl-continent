@@ -1,5 +1,3 @@
-import { onMounted } from 'vue';
-
 export class useLocalStorage {
   static setItem(key, value) {
     localStorage.setItem(key, value);
