@@ -1,12 +1,15 @@
 @import url('./normalize.css');
 @import url('./variables/_breakpoints.css');
 @import url('./variables/_colors.css');
+@import url('./variables/__variables.css');
+@import url('./variables/__fonts.css');
 
 * {
   box-sizing: border-box;
 }
 
-/* html {
+html,
+#app {
   height: 100%;
   width: 100%;
 }
@@ -19,10 +22,25 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
-} */
+
+  font-family: var(--main-font-family);
+}
 
 img {
   height: 100%;
   width: 100%;
   object-fit: cover;
+}
+
+.layout-content {
+  max-width: var(--max-width);
+  width: 100%;
+  margin: 0 30px;
+  min-width: var(--min-width);
+}
+
+@media (min-width: 1200px) {
+  .layout-content {
+    margin: 0;
+  }
 }

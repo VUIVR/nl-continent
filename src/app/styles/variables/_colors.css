@@ -1,3 +1,7 @@
 :root {
-  --main: #d2e055;
+  --main-white: #ffffff;
+  --secondary-white: #f7f7f7;
+  --shadow-white: rgba(39, 39, 39, 0.1);
+  --main-grey: #979797;
+  --border-grey: #97979780;
 }
