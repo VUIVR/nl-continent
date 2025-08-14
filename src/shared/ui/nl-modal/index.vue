@@ -31,9 +31,7 @@ const emit = defineEmits(['close']);
 
 // Обработчики закрытия
 const closeModal = () => {
-  if (!props.preventClose) {
-    emit('close');
-  }
+  emit('close');
 };
 
 const handleOverlayClick = () => {
@@ -84,7 +82,6 @@ watch(
   width: 90%;
   max-width: 769px;
   max-height: 90vh;
-  overflow-y: auto;
   display: flex;
   flex-direction: column;
   padding: 28px 19px 32px;
@@ -116,7 +113,6 @@ watch(
 
 .modal__body {
   flex-grow: 1;
-  overflow-y: auto;
 }
 
 @media (max-width: 576px) {

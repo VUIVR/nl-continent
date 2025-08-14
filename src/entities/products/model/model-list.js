@@ -1,10 +1,13 @@
 import { getList } from '../api/index';
-import { ref } from 'vue';
+import { ref, computed, reactive } from 'vue';
 import { CreateItemProduct } from './create-product';
 
 export class ProductsModel {
   loading = ref(false);
   list = ref([]);
+  filter = reactive({
+    subcategory: null,
+  });
 
   /**
    * Получение списка продуктов
@@ -22,4 +25,9 @@ export class ProductsModel {
       this.loading.value = false;
     }
   }
+
+  filetredProducts = computed(() => {
+    if (!this.filter.subcategory) return this.list.value;
+    return this.list.value.filter((i) => i.tags.some((i) => i.slug === this.filter.subcategory));
+  });
 }

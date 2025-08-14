@@ -14,7 +14,7 @@ export class CreateItemProduct {
   /** если поле false, тогда товара нет в наличии */
   available;
   /** список категорий и подкатегорий, в которые входит продукт */
-  // tags;
+  tags;
 
   constructor(data) {
     this.image = data['main_image_thumb_300'];
@@ -24,6 +24,11 @@ export class CreateItemProduct {
     this.price = data.price;
     this.allowed = data.allowed;
     this.available = data.available;
-    // this.tags = data.tags;
+    this.tags = data.tags.map((i) => {
+      return {
+        name: i.name,
+        slug: i.slug,
+      };
+    });
   }
 }

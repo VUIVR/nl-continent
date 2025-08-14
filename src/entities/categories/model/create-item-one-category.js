@@ -15,6 +15,11 @@ export class CreateItemOneCategory {
     this.text__color = data.text__color;
     this.image = data.image;
     this.slug = data.slug;
-    this.children = data.children;
+    this.childrens = data.children.map((i) => {
+      return {
+        name: i.name,
+        slug: i.slug,
+      };
+    });
   }
 }

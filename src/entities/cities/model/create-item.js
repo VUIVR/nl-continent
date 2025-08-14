@@ -1,4 +1,4 @@
-export class CreateItemCiry {
+export class CreateItemCity {
   /**название населённого пункта  */
   city;
   /* строка с названием страны, области и населённого пункта */

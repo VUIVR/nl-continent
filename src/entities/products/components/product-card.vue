@@ -64,6 +64,7 @@ defineEmits(['click']);
   background-color: var(--main-white);
   display: flex;
   flex-direction: column;
+  box-shadow: 0px 2px 10px var(--border-grey-20);
 }
 
 .product-card__description {

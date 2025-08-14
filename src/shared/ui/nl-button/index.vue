@@ -3,7 +3,7 @@
     class="button"
     :disabled="disabled"
     @click="!disabled && $emit('click')"
-    :class="{ disabled: disabled }"
+    :class="{ button__disabled: disabled }"
   >
     <slot />
   </button>
@@ -36,7 +36,7 @@ defineEmits(['click']);
   overflow: hidden;
 }
 
-.disabled {
+.button__disabled {
   background: transparent;
   box-shadow: none;
   border: 2px solid var(--main-grey);

@@ -13,6 +13,7 @@ export class CategoryModel {
    */
   async getOne(id, slug) {
     this.loading.value = true;
+
     try {
       const resp = await getList(id, slug);
       const category = resp.data.tags.find((i) => i.slug === slug);

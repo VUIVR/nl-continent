@@ -1,6 +1,6 @@
 import { getCity } from '../api/index';
 import { reactive, ref } from 'vue';
-import { CreateItemCiry } from './create-item';
+import { CreateItemCity } from './create-item';
 
 export class CityModel {
   loading = reactive({
@@ -18,7 +18,7 @@ export class CityModel {
     this.loading.list = true;
     try {
       const resp = await getCity({ term: search });
-      this.list.value = resp.data.data.map((i) => new CreateItemCiry(i));
+      this.list.value = resp.data.data.slice(0, 5).map((i) => new CreateItemCity(i));
     } catch {
       // обработка ошибки или показывваем тост с ошибкой
     } finally {

@@ -3,8 +3,16 @@
   --secondary-white: #f7f7f7;
   --shadow-white: rgba(39, 39, 39, 0.1);
   --main-grey: #979797;
-  --border-grey: #97979780;
-  --main-black: #;
+  --main-grey-light: #dadada;
+  --main-black: #272727;
+  --black: #000000;
+  --main-blue-dark: 3202648;
+  --blue-100: #202648;
+  --pale-blue: #e9eef3;
+
+  --border-grey-20: #97979720;
+  --border-grey-30: #97979730;
+  --border-grey-80: #97979780;
 
   --button-gradient-light: #ffa800;
   --button-gradient-dark: #ff6f00;
