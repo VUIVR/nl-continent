@@ -36,7 +36,7 @@ export class CityModel {
 
     try {
       const resp = await getCity({ id });
-      return new CreateItemCiry(resp.data.data);
+      return new CreateItemCity(resp.data.data);
     } catch {
       // обра,отка ошибки или показывваем тост с ошибкой
     } finally {
